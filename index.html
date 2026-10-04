@@ -11,6 +11,7 @@
     <title>CYPRUS REALTOR LAB — Из просмотра в сделку</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="./hero-cyprus.jpg" fetchpriority="high" />
     <link
       href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
@@ -57,10 +58,17 @@
             <span class="hero-line hero-line-accent reveal">в сделку<span class="sun-symbol">✦</span></span>
           </h1>
           <div class="hero-bottom reveal">
-            <p>
-              Два дня практики, после которых вы ведёте клиента уверенно —
-              от первого сообщения до подписи под договором.
-            </p>
+            <div class="hero-value">
+              <p>
+                Практический интенсив по продажам недвижимости на Кипре:
+                от точной квалификации запроса до уверенного закрытия сделки.
+              </p>
+              <ul class="hero-proof" aria-label="Ключевые особенности интенсива">
+                <li>2 дня очно</li>
+                <li>70% практики</li>
+                <li>24 участника</li>
+              </ul>
+            </div>
             <a class="button button-primary" data-whatsapp href="#price">
               <span>Записаться в WhatsApp</span>
               <span class="button-icon" aria-hidden="true">WA</span>
@@ -201,7 +209,7 @@
       <section class="mentor" id="mentor" aria-labelledby="mentor-title">
         <div class="mentor-image reveal">
           <img
-src="./training-workshop.jpg"
+            src="./training-workshop.jpg"
             alt="Марина Коста проводит практический тренинг для риелторов"
             loading="lazy"
           />
@@ -273,6 +281,11 @@ src="./training-workshop.jpg"
 
         <div class="price-card reveal">
           <div class="price-badge">First row · до 31 октября</div>
+          <div class="event-facts" aria-label="Дата, место и язык обучения">
+            <span><small>Когда</small>21–22 ноября</span>
+            <span><small>Где</small>Limassol Marina</span>
+            <span><small>Язык</small>Русский</span>
+          </div>
           <div class="price-value">
             <span>€</span><strong>240</strong>
             <del>€290</del>

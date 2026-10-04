@@ -45,6 +45,11 @@ a {
   text-decoration: none;
 }
 
+:focus-visible {
+  outline: 3px solid var(--sun);
+  outline-offset: 4px;
+}
+
 button,
 a {
   -webkit-tap-highlight-color: transparent;
@@ -292,6 +297,30 @@ img {
   margin: 0;
   color: rgba(255, 255, 255, 0.78);
   font-size: clamp(1rem, 1.25vw, 1.18rem);
+}
+
+.hero-value {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.hero-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-proof li {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  color: rgba(255, 255, 255, 0.88);
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
 }
 
 .button {
@@ -924,6 +953,31 @@ img {
   letter-spacing: 0.1em;
 }
 
+.event-facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0 0;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(0, 35, 73, 0.14);
+  border-bottom: 1px solid rgba(0, 35, 73, 0.14);
+}
+
+.event-facts span {
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.event-facts small {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--text-gray);
+  text-transform: uppercase;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
 .price-value {
   display: flex;
   align-items: flex-start;
@@ -1363,6 +1417,15 @@ img {
     font-size: 0.95rem;
   }
 
+  .hero-proof {
+    gap: 0.45rem;
+  }
+
+  .hero-proof li {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.58rem;
+  }
+
   .scroll-cue {
     display: none;
   }
@@ -1501,6 +1564,14 @@ img {
     padding: 2rem 1.5rem;
     transform: none;
     box-shadow: 10px 10px 0 rgba(194, 155, 64, 0.28);
+  }
+
+  .event-facts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .event-facts span:last-child {
+    grid-column: span 2;
   }
 
   .faq {
