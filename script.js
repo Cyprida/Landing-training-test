@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "35700000000";
+const WHATSAPP_NUMBER = "35799079202";
 const WHATSAPP_MESSAGE =
   "Здравствуйте! Хочу забронировать место на интенсиве CYPRUS REALTOR LAB 21–22 ноября в Лимасоле.";
 
