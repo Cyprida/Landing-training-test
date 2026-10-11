@@ -22,6 +22,7 @@
   </head>
   <body>
     <a class="skip-link" href="#main">К основному содержанию</a>
+    <div class="scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
 
     <header class="site-header" data-header>
       <a class="logo" href="#top" aria-label="CYPRUS REALTOR LAB — на главную">
@@ -29,13 +30,27 @@
         <span>CRL<span class="logo-dot">.</span></span>
       </a>
       <nav class="desktop-nav" aria-label="Основная навигация">
+        <a href="#cyprus">Кипр</a>
         <a href="#program">Программа</a>
+        <a href="#case-lab">Case Lab</a>
         <a href="#mentor">Эксперт</a>
-        <a href="#stories">Отзывы</a>
         <a href="#price">Стоимость</a>
       </nav>
       <a class="header-cta" data-whatsapp href="#price">Забронировать место</a>
+      <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
+        <span></span><span></span>
+      </button>
     </header>
+
+    <nav class="mobile-nav" id="mobile-navigation" aria-label="Мобильная навигация" aria-hidden="true" data-mobile-nav>
+      <span class="mobile-nav-kicker">CYPRUS REALTOR LAB</span>
+      <a href="#cyprus"><small>01</small>Кипр</a>
+      <a href="#program"><small>02</small>Программа</a>
+      <a href="#case-lab"><small>03</small>Case Lab</a>
+      <a href="#mentor"><small>04</small>Эксперт</a>
+      <a href="#price"><small>05</small>Стоимость</a>
+      <p>21–22 ноября 2026 · Лимасол</p>
+    </nav>
 
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
@@ -49,6 +64,7 @@
           <span>21–22 ноября 2026</span>
           <span>Лимасол · Кипр</span>
           <span>24 места</span>
+          <span class="hero-countdown"><b data-days-to-event>—</b> дней до старта</span>
         </div>
 
         <div class="hero-content">
@@ -116,10 +132,54 @@
         </div>
       </section>
 
+      <section class="cyprus-rhythm" id="cyprus" aria-labelledby="cyprus-title">
+        <div class="cyprus-rhythm-intro">
+          <div>
+            <div class="section-number section-number-dark">02 / Ритм острова</div>
+            <p class="eyebrow eyebrow-dark">От первого света до golden hour</p>
+          </div>
+          <div>
+            <h2 id="cyprus-title" class="display-heading display-heading-dark reveal">
+              Клиент выбирает<br />не только дом.<br /><em>Он выбирает Кипр.</em>
+            </h2>
+            <p class="cyprus-rhythm-copy reveal">
+              Здесь недвижимость начинается с ощущения: тишина на рассвете, море после рабочего дня,
+              тёплый камень в лучах заката. Сильная презентация связывает объект с этим будущим.
+            </p>
+          </div>
+        </div>
+
+        <figure
+          class="sky-compare reveal"
+          data-sky-compare
+          style="--reveal: 52%"
+          role="img"
+          aria-label="Сравнение одного кипрского пейзажа на рассвете и на закате"
+        >
+          <img class="sky-image sky-sunset" src="./hero-cyprus.jpg" alt="" loading="lazy" />
+          <div class="sky-sunrise" aria-hidden="true">
+            <img class="sky-image" src="./cyprus-sunrise.jpg" alt="" loading="lazy" />
+          </div>
+          <div class="sky-label sky-label-dawn"><span>06:18</span><strong>Рассвет</strong></div>
+          <div class="sky-label sky-label-sunset"><span>17:03</span><strong>Закат</strong></div>
+          <div class="sky-divider" aria-hidden="true"><i>↔</i></div>
+          <input
+            class="sky-range"
+            type="range"
+            min="8"
+            max="92"
+            value="52"
+            aria-label="Сравнить рассвет и закат"
+            data-sky-range
+          />
+          <figcaption><span>← двигайте ползунок →</span><strong>Один остров · два настроения</strong></figcaption>
+        </figure>
+      </section>
+
       <section class="program" id="program" aria-labelledby="program-title">
         <div class="program-intro">
           <div>
-            <div class="section-number section-number-dark">02 / Программа</div>
+            <div class="section-number section-number-dark">03 / Программа</div>
             <p class="eyebrow eyebrow-dark">Не лекция. Репетиция реальных сделок.</p>
           </div>
           <h2 id="program-title" class="display-heading display-heading-dark reveal">
@@ -182,9 +242,98 @@
         </div>
       </section>
 
+      <section class="case-lab" id="case-lab" aria-labelledby="case-lab-title">
+        <div class="case-lab-media" aria-hidden="true">
+          <img src="./case-lab-cyprus.jpg" alt="" loading="lazy" />
+        </div>
+        <div class="case-lab-shade" aria-hidden="true"></div>
+        <div class="case-lab-inner">
+          <div class="case-lab-heading">
+            <div class="section-number">04 / Case Lab</div>
+            <p class="eyebrow">Интерактивный тренажёр</p>
+            <h2 id="case-lab-title" class="display-heading reveal">
+              Один объект.<br /><em>Три разных мотива.</em>
+            </h2>
+            <p class="case-lab-lead reveal">
+              На интенсиве вы не заучиваете скрипт — вы учитесь видеть задачу за словами клиента.
+              Выберите сценарий и посмотрите, как меняется логика презентации.
+            </p>
+          </div>
+
+          <div class="case-console reveal">
+            <div class="case-tabs" role="tablist" aria-label="Сценарии клиентов">
+              <button class="case-tab is-active" id="case-tab-investor" role="tab" aria-selected="true" aria-controls="case-investor" data-case-tab="case-investor">
+                <span>01</span><strong>Инвестор</strong><small>Доходность</small>
+              </button>
+              <button class="case-tab" id="case-tab-relocation" role="tab" aria-selected="false" aria-controls="case-relocation" data-case-tab="case-relocation" tabindex="-1">
+                <span>02</span><strong>Переезд</strong><small>Новая жизнь</small>
+              </button>
+              <button class="case-tab" id="case-tab-second-home" role="tab" aria-selected="false" aria-controls="case-second-home" data-case-tab="case-second-home" tabindex="-1">
+                <span>03</span><strong>Second home</strong><small>Свобода</small>
+              </button>
+            </div>
+
+            <div class="buyer-journey" aria-hidden="true" data-buyer-journey style="--buyer-position: 8%">
+              <span class="buyer-track"></span>
+              <i class="buyer-stop buyer-stop-one"></i>
+              <i class="buyer-stop buyer-stop-two"></i>
+              <i class="buyer-stop buyer-stop-three"></i>
+              <div class="buyer-person" data-buyer-person>
+                <svg viewBox="0 0 42 62" focusable="false">
+                  <circle cx="21" cy="9" r="6"></circle>
+                  <path class="person-body" d="M21 17v21"></path>
+                  <path class="person-arm person-arm-left" d="M21 23 11 34"></path>
+                  <path class="person-arm person-arm-right" d="m21 23 10 10"></path>
+                  <path class="person-leg person-leg-left" d="m21 38-9 17"></path>
+                  <path class="person-leg person-leg-right" d="m21 38 10 17"></path>
+                </svg>
+                <small>клиент</small>
+              </div>
+            </div>
+
+            <div class="case-panel is-active" id="case-investor" role="tabpanel" aria-labelledby="case-tab-investor">
+              <div class="case-panel-label">Переводим запрос</div>
+              <p class="case-quote">«Мне нужен ликвидный объект у моря»</p>
+              <div class="case-route">
+                <div><small>Слышим</small><strong>Страх заморозить капитал</strong></div>
+                <span aria-hidden="true">→</span>
+                <div><small>Показываем</small><strong>Сценарий выхода и аренды</strong></div>
+                <span aria-hidden="true">→</span>
+                <div><small>Фиксируем</small><strong>Цифры и следующий шаг</strong></div>
+              </div>
+            </div>
+
+            <div class="case-panel" id="case-relocation" role="tabpanel" aria-labelledby="case-tab-relocation" hidden>
+              <div class="case-panel-label">Переводим запрос</div>
+              <p class="case-quote">«Хочу спокойный район и хорошую школу рядом»</p>
+              <div class="case-route">
+                <div><small>Слышим</small><strong>Потребность в опоре</strong></div>
+                <span aria-hidden="true">→</span>
+                <div><small>Показываем</small><strong>Ритм обычного дня семьи</strong></div>
+                <span aria-hidden="true">→</span>
+                <div><small>Фиксируем</small><strong>Маршрут переезда</strong></div>
+              </div>
+            </div>
+
+            <div class="case-panel" id="case-second-home" role="tabpanel" aria-labelledby="case-tab-second-home" hidden>
+              <div class="case-panel-label">Переводим запрос</div>
+              <p class="case-quote">«Прилетаем несколько раз в год — хочется своего места»</p>
+              <div class="case-route">
+                <div><small>Слышим</small><strong>Желание лёгкости</strong></div>
+                <span aria-hidden="true">→</span>
+                <div><small>Показываем</small><strong>Готовый сценарий отдыха</strong></div>
+                <span aria-hidden="true">→</span>
+                <div><small>Фиксируем</small><strong>Простоту владения</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="case-lab-caption">Учебная симуляция · содержание адаптируется под реальные кейсы группы</p>
+      </section>
+
       <section class="method section-dark" aria-labelledby="method-title">
         <div class="method-header">
-          <div class="section-number">03 / Новый маршрут</div>
+          <div class="section-number">05 / Новый маршрут</div>
           <h2 id="method-title" class="display-heading reveal">
             Не «продавать».<br /><em>Проводить к решению.</em>
           </h2>
@@ -216,7 +365,7 @@
           <span class="image-stamp" aria-hidden="true">15 лет<br />в сделках</span>
         </div>
         <div class="mentor-copy">
-          <div class="section-number section-number-dark">04 / Эксперт</div>
+          <div class="section-number section-number-dark">06 / Эксперт</div>
           <p class="eyebrow eyebrow-dark">Марина Коста</p>
           <h2 id="mentor-title" class="display-heading display-heading-dark reveal">
             Практик,<br />который говорит<br /><em>на языке рынка.</em>
@@ -239,7 +388,7 @@
 
       <section class="stories" id="stories" aria-labelledby="stories-title">
         <div class="stories-heading">
-          <div class="section-number section-number-dark">05 / После интенсива</div>
+          <div class="section-number section-number-dark">07 / После интенсива</div>
           <h2 id="stories-title" class="display-heading display-heading-dark reveal">
             Когда меняется<br />не скрипт, а <em>подход.</em>
           </h2>
@@ -270,7 +419,7 @@
 
       <section class="price-section section-dark" id="price" aria-labelledby="price-title">
         <div class="price-copy">
-          <div class="section-number">06 / Ваше место</div>
+          <div class="section-number">08 / Ваше место</div>
           <h2 id="price-title" class="display-heading reveal">
             Одна сильная сделка<br /><em>окупит этот шаг.</em>
           </h2>
@@ -307,7 +456,7 @@
 
       <section class="faq" aria-labelledby="faq-title">
         <div class="faq-heading">
-          <div class="section-number section-number-dark">07 / Вопросы</div>
+          <div class="section-number section-number-dark">09 / Вопросы</div>
           <h2 id="faq-title" class="display-heading display-heading-dark reveal">До встречи<br /><em>остался вопрос?</em></h2>
         </div>
         <div class="faq-list reveal">
