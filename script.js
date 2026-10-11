@@ -1,3 +1,39 @@
+const designThemes = {
+  midnight: { label: "Midnight", browserColor: "#002349" },
+  terracotta: { label: "Terracotta", browserColor: "#3b201c" },
+  editorial: { label: "Editorial", browserColor: "#f6f2e8" },
+};
+
+const designOptions = [...document.querySelectorAll("[data-design-option]")];
+const designName = document.querySelector("[data-design-name]");
+const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+const applyDesignTheme = (theme, persist = true) => {
+  const selectedTheme = designThemes[theme] ? theme : "midnight";
+  document.documentElement.dataset.designTheme = selectedTheme;
+  document.documentElement.style.colorScheme = selectedTheme === "editorial" ? "light" : "dark light";
+
+  designOptions.forEach((option) => {
+    option.setAttribute("aria-pressed", String(option.dataset.designOption === selectedTheme));
+  });
+
+  if (designName) designName.textContent = designThemes[selectedTheme].label;
+  if (themeColorMeta) themeColorMeta.content = designThemes[selectedTheme].browserColor;
+
+  if (!persist) return;
+  try {
+    localStorage.setItem("crl-design-theme", selectedTheme);
+  } catch (error) {
+    // Theme switching still works when browser storage is disabled.
+  }
+};
+
+applyDesignTheme(document.documentElement.dataset.designTheme, false);
+
+designOptions.forEach((option) => {
+  option.addEventListener("click", () => applyDesignTheme(option.dataset.designOption));
+});
+
 const WHATSAPP_NUMBER = "35799079202";
 const WHATSAPP_MESSAGE =
   "Здравствуйте! Хочу забронировать место на интенсиве CYPRUS REALTOR LAB 21–22 ноября в Лимасоле.";

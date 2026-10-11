@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" data-design-theme="midnight">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -76,10 +76,43 @@
     />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="stylesheet" href="./styles.css" />
-    <script>document.documentElement.classList.add("js");</script>
+    <script>
+      document.documentElement.classList.add("js");
+      try {
+        const availableThemes = ["midnight", "terracotta", "editorial"];
+        const requestedTheme = new URLSearchParams(window.location.search).get("theme");
+        const savedTheme = localStorage.getItem("crl-design-theme");
+        const preferredTheme = availableThemes.includes(requestedTheme) ? requestedTheme : savedTheme;
+        if (availableThemes.includes(preferredTheme)) {
+          document.documentElement.dataset.designTheme = preferredTheme;
+        }
+      } catch (error) {
+        // The default design remains available when browser storage is disabled.
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">К основному содержанию</a>
+    <aside class="design-switcher" aria-label="Переключение версий дизайна">
+      <div class="design-switcher-heading">
+        <span>Версия дизайна</span>
+        <strong data-design-name aria-live="polite">Midnight</strong>
+      </div>
+      <div class="design-switcher-buttons" role="group" aria-label="Выберите дизайн">
+        <button class="design-option" type="button" data-design-option="midnight" aria-pressed="true">
+          <i class="design-swatch design-swatch-midnight" aria-hidden="true"></i>
+          <span>Midnight</span>
+        </button>
+        <button class="design-option" type="button" data-design-option="terracotta" aria-pressed="false">
+          <i class="design-swatch design-swatch-terracotta" aria-hidden="true"></i>
+          <span>Terracotta</span>
+        </button>
+        <button class="design-option" type="button" data-design-option="editorial" aria-pressed="false">
+          <i class="design-swatch design-swatch-editorial" aria-hidden="true"></i>
+          <span>Editorial</span>
+        </button>
+      </div>
+    </aside>
     <div class="scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
 
     <header class="site-header" data-header>
