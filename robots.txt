@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cyprida.github.io/Landing-training-test/sitemap.xml
